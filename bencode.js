@@ -62,13 +62,13 @@
 		*/
 		this.encodeObject = function(obj){
 			var allNum = true, ret = null;
-			for(var x in dict){ // because it's such a pain in the arse to detect wether something is an array or dictionary
+			for(var x in obj){ // because it's such a pain in the arse to detect wether something is an array or dictionary
 				if(isNaN(x)){ allNum = false; break; } // we go for the opportunistic way and just see wether the keys are numeric
 			}
 			if(allNum){
 				ret = "l";
 				for(var x = 0; x < obj.length; x++){
-					ret += this.encodeElm(list[x]);
+					ret += this.encodeElm(obj[x]);
 				}
 				ret += "e";
 				return ret;
@@ -76,12 +76,12 @@
 				ret = "d";
 				for(var x in obj){
 					ret += this.encodeString(x);
-					ret += this.encodeElm(dict[x]);
+					ret += this.encodeElm(obj[x]);
 				}
 				ret += "e";
 				return ret;
 			}
-			throw new Error("¬(a & ¬a) Your computer just lost its sense of logic, prepare for flying pigs and the end of time");
+			throw new Error("Â¬(a & Â¬a) Your computer just lost its sense of logic, prepare for flying pigs and the end of time");
 			return null;
 		}
 		

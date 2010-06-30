@@ -1,18 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 		<title></title>
 		<script type="text/javascript" src="bdecode.js"></script>
 		<script type="text/javascript" src="bencode.js"></script>
 		<script type="text/javascript">
 			var str = "d4:spam4:maps4:ampsi3214e4:maspli3ei2ei1ee4:asmpd2:boi45e2:obi54eee";
-			var test = new BDecode(str);
-			var decoded = test.decode();
+			var decoded = BDecode(str);
 			console.log("Test-string: ", str);
 			console.log("Decoded: ", decoded);
-			var test = new BEncode(decoded);
-			var encoded = test.encode();
+			var encoded = BEncode(decoded);
 			console.log("Re-encoded: ", encoded);
 		</script>
 	</head>

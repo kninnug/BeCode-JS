@@ -152,7 +152,7 @@
 				throw new Error("Value at position "+startPos+": '"+this.str.charAt(startPos)+"' is not a valid length-number.");
 				return null;
 			}
-			ret = this.str.substr(pos, pos+len);
+			ret = this.str.substr(pos, len);
 			pos += len;
 			return ret;
 		};
